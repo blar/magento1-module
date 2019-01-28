@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class Omikron_Factfinder_Model_Export_Product
+ * @todo delete this class
+ */
 class Omikron_Factfinder_Model_Export_Product
 {
     const FEED_PATH          = 'factfinder';
