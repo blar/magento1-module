@@ -95,7 +95,7 @@ class Omikron_Factfinder_Model_Export_Strategy_Product implements Omikron_Factfi
      */
     public function isEnabled()
     {
-        return $this->configHelper->isEnabled($this->getStore()); //@todo implement isEnabled
+        return $this->configHelper->isEnabled($this->getStore());
     }
 
     /**

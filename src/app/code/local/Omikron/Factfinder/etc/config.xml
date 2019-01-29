@@ -88,6 +88,7 @@
         <factfinder>
             <general>
                 <is_enabled>0</is_enabled>
+                <logging_enabled>0</logging_enabled>
                 <tracking_product_number_field_role>{"brand":"Manufacturer","campaignProductNumber":"ProductNumber","deeplink":"ProductUrl","description":"Description","displayProductNumber":"ProductNumber","ean":"EAN","imageUrl":"ImageUrl","masterArticleNumber":"MasterProductNumber","price":"Price","productName":"Name","trackingProductNumber":"ProductNumber"}</tracking_product_number_field_role>
             </general>
             <components>
@@ -127,6 +128,9 @@
                 <ff_product_visibility>3,4</ff_product_visibility>
                 <ff_price_customer_group>0</ff_price_customer_group>
             </data_transfer>
+            <cms_export>
+                <ff_cms_export_enabled>0</ff_cms_export_enabled>
+            </cms_export>
         </factfinder>
     </default>
     <crontab>

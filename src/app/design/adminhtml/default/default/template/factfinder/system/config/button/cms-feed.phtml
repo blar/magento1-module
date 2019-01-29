@@ -1,0 +1,20 @@
+<script type="text/javascript">
+    function exportCmsToCsv() {
+        new Ajax.Request('<?php echo $this->getAjaxCheckUrl() ?>', {
+            method: 'get',
+            onSuccess: function (transport) {
+                var response = JSON.parse(transport.responseText);
+                setExportToCsvMessage(response.message.message);
+            },
+            onFailure: function (transport) {
+                setExportToCsvMessage('<?php echo(__("There were an error during CMSfeed export. Please check the server log and contact the technical support.")) ?>');            }
+        });
+    }
+
+    function setExportToCsvMessage(message) {
+        document.getElementById("ffCmsExportInfo").innerHTML = message;
+    }
+</script>
+
+<?php echo $this->getButtonHtml() ?>
+<p id="ffCmsExportInfo"></p>

@@ -41,7 +41,7 @@ class Omikron_Factfinder_Model_Export_Strategy_Cms implements Omikron_Factfinder
     {
         $this->pageCollection = Mage::getModel('cms/page')->getCollection();
         $this->configHelper = Mage::helper('factfinder');
-        $this->cmsHelper = Mage::helper('factfinder/cms'); //@todo implemen whole class
+        $this->cmsHelper = Mage::helper('factfinder/cms');
         $this->appEmulation =  Mage::getSingleton('core/app_emulation');
     }
 
@@ -57,7 +57,7 @@ class Omikron_Factfinder_Model_Export_Strategy_Cms implements Omikron_Factfinder
      */
     public function getChannel()
     {
-        return $this->configHelper->getChannel($this->getStore(), true); //@todo modify getChannel to getCmsChannel
+        return $this->cmsHelper->getChannel($this->getStore());
     }
 
     /**
@@ -67,7 +67,7 @@ class Omikron_Factfinder_Model_Export_Strategy_Cms implements Omikron_Factfinder
      */
     public function isEnabled()
     {
-        return $this->configHelper->isCmsExportEnabled($this->getStore()) && $this->configHelper->useSeparateCmsChannel($this->getStore()); //@todo implement methods
+        return $this->cmsHelper->isCmsExportEnabled($this->getStore()) && $this->cmsHelper->useSeparateCmsChannel($this->getStore());
     }
 
     /**
@@ -78,7 +78,7 @@ class Omikron_Factfinder_Model_Export_Strategy_Cms implements Omikron_Factfinder
      */
     public function mergeMainArticleColumn(array $feedRow)
     {
-        $mainArticleNumber = $this->cmsHelper->getMainProductArticle($this->getStore()->getId()); //@todo implement getMainProductArticle
+        $mainArticleNumber = $this->cmsHelper->getMainProductArticle($this->getStore()->getId());
         $feedRow[$mainArticleNumber] = $feedRow[Omikron_Factfinder_Model_Export_Strategy_Cms_Schema::PAGE_ID];
 
         return $feedRow;
@@ -135,6 +135,6 @@ class Omikron_Factfinder_Model_Export_Strategy_Cms implements Omikron_Factfinder
     protected function getCmsPageCollection()
     {
         return $this->pageCollection
-            ->addAttributeToFilter('identifier', ['nin' => $this->configHelper->getCmsBlacklist($this->getStore())]); //@todo implement cmsBlacklist and move to cmsHelper
+            ->addAttributeToFilter('identifier', ['nin' => $this->cmsHelper->getCmsBlacklist($this->getStore())]);
         }
 }

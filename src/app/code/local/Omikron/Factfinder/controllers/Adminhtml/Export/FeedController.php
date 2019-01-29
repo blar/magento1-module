@@ -23,6 +23,12 @@ class Omikron_Factfinder_Adminhtml_Export_FeedController extends Mage_Adminhtml_
         $this->getResponse()->setBody(Mage::helper('core')->jsonEncode(['message' => $result]));
     }
 
+    public function cmsExportAction()
+    {
+        $this->getResponse()->setHeader('Content-type', 'application/json');
+        $this->getResponse()->setBody(Mage::helper('core')->jsonEncode(['message' => ['message'=> 'test passed']]));
+    }
+
     public function uploadAction()
     {
         $result = $this->product->uploadProduct($this->store);

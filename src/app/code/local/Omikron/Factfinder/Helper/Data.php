@@ -6,66 +6,88 @@
 class Omikron_Factfinder_Helper_Data extends Mage_Core_Helper_Abstract
 {
     // General
-    const PATH_ADDRESS = 'factfinder/general/address';
-    const PATH_CHANNEL = 'factfinder/general/channel';
-    const PATH_USERNAME = 'factfinder/general/username';
-    const PATH_PASSWORD = 'factfinder/general/password';
-    const PATH_AUTHENTICATION_PREFIX = 'factfinder/general/authentication_prefix';
-    const PATH_AUTHENTICATION_POSTFIX = 'factfinder/general/authentication_postfix';
+    const PATH_IS_ENABLED                         = 'factfinder/general/is_enabled';
+    const LOGGING_ENABLED                         = 'factfinder/general/logging_enabled';
+    const PATH_ADDRESS                            = 'factfinder/general/address';
+    const PATH_CHANNEL                            = 'factfinder/general/channel';
+    const PATH_USERNAME                           = 'factfinder/general/username';
+    const PATH_PASSWORD                           = 'factfinder/general/password';
+    const PATH_AUTHENTICATION_PREFIX              = 'factfinder/general/authentication_prefix';
+    const PATH_AUTHENTICATION_POSTFIX             = 'factfinder/general/authentication_postfix';
     const PATH_TRACKING_PRODUCT_NUMBER_FIELD_ROLE = 'factfinder/general/tracking_product_number_field_role';
 
     // Components
-    const PATH_FF_SUGGEST = 'factfinder/components/ff_suggest';
-    const PATH_FF_ASN = 'factfinder/components/ff_asn';
-    const PATH_FF_PAGING = 'factfinder/components/ff_paging';
-    const PATH_FF_SORTBOX = 'factfinder/components/ff_sortbox';
-    const PATH_FF_BREADCRUMB = 'factfinder/components/ff_breadcrumb';
-    const PATH_FF_PRODUCTSPP = 'factfinder/components/ff_productspp';
-    const PATH_FF_RECOMMENDATION = 'factfinder/components/ff_recommendation';
-    const PATH_FF_CAMPAIGN = 'factfinder/components/ff_campaign';
+    const PATH_FF_SUGGEST                = 'factfinder/components/ff_suggest';
+    const PATH_FF_ASN                    = 'factfinder/components/ff_asn';
+    const PATH_FF_PAGING                 = 'factfinder/components/ff_paging';
+    const PATH_FF_SORTBOX                = 'factfinder/components/ff_sortbox';
+    const PATH_FF_BREADCRUMB             = 'factfinder/components/ff_breadcrumb';
+    const PATH_FF_PRODUCTSPP             = 'factfinder/components/ff_productspp';
+    const PATH_FF_RECOMMENDATION         = 'factfinder/components/ff_recommendation';
+    const PATH_FF_CAMPAIGN               = 'factfinder/components/ff_campaign';
     const PATH_FF_PUSHEDPRODUCTSCAMPAIGN = 'factfinder/components/ff_pushedproductscampaign';
-    const PATH_FF_SIMILAR = 'factfinder/components/ff_similar';
+    const PATH_FF_SIMILAR                = 'factfinder/components/ff_similar';
 
     // Advanced
-    const PATH_VERSION = 'factfinder/advanced/version';
-    const PATH_USE_URL_PARAMETER = 'factfinder/advanced/use_url_parameter';
-    const PATH_USE_CACHE = 'factfinder/advanced/use_cache';
-    const PATH_DEFAULT_QUERY = 'factfinder/advanced/default_query';
-    const PATH_ADD_PARAMS = 'factfinder/advanced/add_params';
-    const PATH_ADD_TRACKING_PARAMS = 'factfinder/advanced/add_tracking_params';
-    const PATH_KEEP_URL_PARAMS = 'factfinder/advanced/keep_url_param';
-    const PATH_USE_ASN = 'factfinder/advanced/use_asn';
-    const PATH_USE_FOUND_ROWS = 'factfinder/advanced/use_found_words';
-    const PATH_USE_CAMPAIGNS = 'factfinder/advanced/use_campaigns';
-    const PATH_FEEDBACK_CAMPAIGN_LABEL = 'factfinder/advanced/feedback_campaign_label';
-    const PATH_ADVISOR_CAMPAIGN_NAME = 'factfinder/advanced/advisor_campaign_name';
-    const PATH_PRODUCT_CAMPAIGN_NAME = 'factfinder/advanced/product_campaign_name';
-    const PATH_PRODUCT_FEEDBACK_CAMPAIGN_NAME = 'factfinder/advanced/product_feedback_campaign_name';
-    const PATH_PRODUCT_LANDING_PAGE_CAMPAIGN_NAME = 'factfinder/advanced/product_landing_page_campaign_name';
-    const PATH_FEEDBACK_LANDING_PAGE_LABEL = 'factfinder/advanced/feedback_landing_page_label';
-    const PATH_LANDING_PAGE_PAGE_ID = 'factfinder/advanced/landing_page_page_id';
+    const PATH_VERSION                             = 'factfinder/advanced/version';
+    const PATH_USE_URL_PARAMETER                   = 'factfinder/advanced/use_url_parameter';
+    const PATH_USE_CACHE                           = 'factfinder/advanced/use_cache';
+    const PATH_DEFAULT_QUERY                       = 'factfinder/advanced/default_query';
+    const PATH_ADD_PARAMS                          = 'factfinder/advanced/add_params';
+    const PATH_ADD_TRACKING_PARAMS                 = 'factfinder/advanced/add_tracking_params';
+    const PATH_KEEP_URL_PARAMS                     = 'factfinder/advanced/keep_url_param';
+    const PATH_USE_ASN                             = 'factfinder/advanced/use_asn';
+    const PATH_USE_FOUND_ROWS                      = 'factfinder/advanced/use_found_words';
+    const PATH_USE_CAMPAIGNS                       = 'factfinder/advanced/use_campaigns';
+    const PATH_FEEDBACK_CAMPAIGN_LABEL             = 'factfinder/advanced/feedback_campaign_label';
+    const PATH_ADVISOR_CAMPAIGN_NAME               = 'factfinder/advanced/advisor_campaign_name';
+    const PATH_PRODUCT_CAMPAIGN_NAME               = 'factfinder/advanced/product_campaign_name';
+    const PATH_PRODUCT_FEEDBACK_CAMPAIGN_NAME      = 'factfinder/advanced/product_feedback_campaign_name';
+    const PATH_PRODUCT_LANDING_PAGE_CAMPAIGN_NAME  = 'factfinder/advanced/product_landing_page_campaign_name';
+    const PATH_FEEDBACK_LANDING_PAGE_LABEL         = 'factfinder/advanced/feedback_landing_page_label';
+    const PATH_LANDING_PAGE_PAGE_ID                = 'factfinder/advanced/landing_page_page_id';
     const PATH_SHOPPING_CART_PRODUCT_CAMPAIGN_NAME = 'factfinder/advanced/shopping_cart_product_campaign_name';
-    const PATH_SHOPPING_CART_FEEDBACK_LABEL = 'factfinder/advanced/shopping_cart_feedback_label';
-    const PATH_GENERATE_ADVISOR_TREE = 'factfinder/advanced/generate_advisor_tree';
-    const PATH_DISABLE_CACHE = 'factfinder/advanced/disable_cache';
-    const PATH_USE_PERSONALIZATION = 'factfinder/advanced/use_personalization';
-    const PATH_USE_SEMANTIC_ENHANCER = 'factfinder/advanced/use_semantic_enhancer';
-    const PATH_USE_ASO = 'factfinder/advanced/use_aso';
-    const PATH_USE_BROWSER_HISTORY = 'factfinder/advanced/use_browser_history';
-    const PATH_USE_SEO = 'factfinder/advanced/use_seo';
-    const PATH_SEO_PREFIX = 'factfinder/advanced/seo_prefix';
-    const PATH_ONLY_SEARCH_PARAMS = 'factfinder/advanced/only_search_params';
-    const PATH_SIMILAR_PRODUCTS_MAX_RESULTS = 'factfinder/advanced/similar_products_max_results';
+    const PATH_SHOPPING_CART_FEEDBACK_LABEL        = 'factfinder/advanced/shopping_cart_feedback_label';
+    const PATH_GENERATE_ADVISOR_TREE               = 'factfinder/advanced/generate_advisor_tree';
+    const PATH_DISABLE_CACHE                       = 'factfinder/advanced/disable_cache';
+    const PATH_USE_PERSONALIZATION                 = 'factfinder/advanced/use_personalization';
+    const PATH_USE_SEMANTIC_ENHANCER               = 'factfinder/advanced/use_semantic_enhancer';
+    const PATH_USE_ASO                             = 'factfinder/advanced/use_aso';
+    const PATH_USE_BROWSER_HISTORY                 = 'factfinder/advanced/use_browser_history';
+    const PATH_USE_SEO                             = 'factfinder/advanced/use_seo';
+    const PATH_SEO_PREFIX                          = 'factfinder/advanced/seo_prefix';
+    const PATH_ONLY_SEARCH_PARAMS                  = 'factfinder/advanced/only_search_params';
+    const PATH_SIMILAR_PRODUCTS_MAX_RESULTS        = 'factfinder/advanced/similar_products_max_results';
 
     // Data Transfer
-    const PATH_FF_UPLOAD_URL_USER = 'factfinder/basic_auth_data_transfer/ff_upload_url_user';
+    const PATH_FF_UPLOAD_URL_USER     = 'factfinder/basic_auth_data_transfer/ff_upload_url_user';
     const PATH_FF_UPLOAD_URL_PASSWORD = 'factfinder/basic_auth_data_transfer/ff_upload_url_password';
 
     // Cron
-    const PATH_FF_CRON_ENABLED   = 'factfinder/configurable_cron/enabled';
+    const PATH_FF_CRON_ENABLED = 'factfinder/configurable_cron/enabled';
 
     /**
-     * Returns URL     *
+     * Checks if FACT-Finder integration is enabled
+     *
+     * @return bool
+     */
+    public function isEnabled()
+    {
+        return boolval(Mage::getStoreConfig(self::PATH_IS_ENABLED));
+    }
+
+    /**
+     * Checks if logging is enabled
+     *
+     * @return bool
+     */
+    public function isLoggingEnabled()
+    {
+        return boolval(Mage::getStoreConfig(self::LOGGING_ENABLED));
+    }
+
+    /**
+     * Returns URL
      * @return string
      */
     public function getAddress()
